@@ -31,7 +31,7 @@
 /**
  * struct fmt - struct
  *
- * @fmt: format
+ * @format: format
  * @func: function associated
  */
 
@@ -110,7 +110,7 @@ int handle_write_char(char s, char buff[],
 int write_number(int is_positive, int index, char buff[],
 		int flags, int width, int precision, int size);
 int write_the_num(int ind, char buff[], int flags,
-		int width, int prec,int length, char padd, char extra_c);
+		int width, int prec, int length, char padd, char extra_c);
 int write_the_pointer(char buff[], int index, int length,
 		int width, int flags, char padd, char extra_c, int padd_start);
 

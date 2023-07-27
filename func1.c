@@ -139,7 +139,8 @@ int print_integer(va_list lists, char buff[],
 	}
 	q++;
 
-	return (write_number(isNegative, (int)q, (char *)buff, flags, width, precision, size));
+	return (write_number(isNegative, (int)q,
+	(char *)buff, flags, width, precision, size));
 }
 
 /************************* PRINT BINARY Numbers *************************/

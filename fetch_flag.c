@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * fetch_flag - a function fetches the current flag
+ * fetch_flags - a function fetches the current flag
  * @format: the formatted string which is to print the argument
  * @q: it contains the arguments
  * Return: the flag integer value

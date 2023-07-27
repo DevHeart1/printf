@@ -35,22 +35,22 @@ int _printf(const char *format, ...)
 		{
 			print_buffer(buff, &buffer_index);
 			flags = fetch_flags(format, &q);
-			width = fetch_width(format, &q, args);
-			precision = fetch_precision(format, &q, args);
+			width = fetch_width(format, &q, lists);
+			precision = fetch_precision(format, &q, lists);
 			size = fetch_size(format, &q);
 			++q;
-			printed = handle_print(format, &q, args, buffer,
+			print = handle_print(format, &q, lists, buff,
 					flags, width, precision, size);
 			if (print == -1)
 				return (-1);
-			char_printed += printed;
+			char_printed += print;
 		}
 	}
 
 	print_buffer(buff, &buffer_index);
 
 	va_end(lists);
-	return (lists);
+	return (char_printed);
 }
 
 /**

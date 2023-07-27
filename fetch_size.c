@@ -20,7 +20,7 @@ int fetch_size(const char *format, int *q)
 	if (size_of == 0)
 		*q = active_q - 1;
 	else
-		*q = current_q;
+		*q = active_q;
 
 	return (size_of);
 }

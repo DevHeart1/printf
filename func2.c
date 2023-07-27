@@ -33,7 +33,7 @@ int print_unsignedNum(va_list lists, char buff[],
 
 	q++;
 
-	return (write_unsignd(0, q, buff, flags, width, precision, size));
+	return (write_the_unsignd(0, q, buff, flags, width, precision, size));
 }
 
 /************* PRINT POSITIVE NUMBER IN OCTAL ***************/
@@ -73,7 +73,7 @@ int print_octalNum(va_list lists, char buff[],
 		buff[q--] = '0';
 	q++;
 
-	return (write_unsignd(0, q, buff, flags, width, precision, size));
+	return (write_the_unsignd(0, q, buff, flags, width, precision, size));
 }
 
 /************** PRINT POSITIVE NUMBER IN HEXADECIMAL **************/
@@ -108,7 +108,7 @@ int print_hexadecimal(va_list lists, char buff[],
 int print_hexaNum_upper(va_list lists, char buff[],
 		int flags, int width, int precision, int size)
 {
-	return (print_hexaNum(args, "0123456789ABCDEF", buff,
+	return (print_hexaNum(lists, "0123456789ABCDEF", buff,
 				flags, 'X', width, precision, size));
 }
 
@@ -157,5 +157,5 @@ int print_hexaNum(va_list lists, char map_to[], char buff[],
 
 	q++;
 
-	return (write_unsignd(0, q, buffer, flags, width, precision, size));
+	return (write_the_unsignd(0, q, buff, flags, width, precision, size));
 }

@@ -12,7 +12,7 @@
  *
  * Return: Number of chars printed.
  */
-int handle_print(char s, char buff[],
+int handle_write_char(char s, char buff[],
 		int flags, int width, int precision, int size)
 {
 	int q = 0;
@@ -25,7 +25,7 @@ int handle_print(char s, char buff[],
 		padding = '0';
 
 	buff[q++] = s;
-	buffer[q] = '\0';
+	buff[q] = '\0';
 
 	if (width > 1)
 	{
@@ -105,7 +105,7 @@ int write_the_num(int index, char buff[],
 	if (prec > 0 && prec < length)
 		padding = ' ';
 	while (prec > length)
-		buffer[--index] = '0', length++;
+		buff[--index] = '0', length++;
 	if (extra_ch != 0)
 		length++;
 	if (width > length)
@@ -117,7 +117,7 @@ int write_the_num(int index, char buff[],
 		{
 			if (extra_ch)
 				buff[--index] = extra_ch;
-			return (write(1, &buff[index], length) + write(1, &buffer[1], q - 1));
+			return (write(1, &buff[index], length) + write(1, &buff[1], q - 1));
 		}
 		else if (!(flags & F_MINUS) && padding == ' ')
 		{
@@ -129,7 +129,7 @@ int write_the_num(int index, char buff[],
 		{
 			if (extra_ch)
 				buff[--padding_start] = extra_ch;
-			return (write(1, &buff[padding_start], i - padding_start) +
+			return (write(1, &buff[padding_start], q - padding_start) +
 					write(1, &buff[index], length - (1 - padding_start)));
 		}
 	}

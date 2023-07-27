@@ -21,14 +21,14 @@ int handle_print(const char *format, int *index, va_list lists, char buff[],
 	fmt_t format_types[] = {
 		{'c', print_character}, {'s', print_string}, {'%', print_percentage},
 		{'i', print_integer}, {'d', print_integer}, {'b', print_binaryNum},
-		{'u', print_}, {'o', print_octalNum}, {'x', print_hexadecimal},
-		{'X', print_hexaNum_upper}, {'p', print_thepointer},
+		{'u', print_unsignedNum}, {'o', print_octalNum}, {'x', print_hexadecimal},
+		{'X', print_hexaNum_upper}, {'p', prints_thepointer},
 		{'S', print_the_unprintable}, {'r', print_reverse_str},
 		{'R', print_the_rot13string}, {'\0', NULL}
 	};
 
-	for (q = 0; format_types[i].format != '\0'; q++)
-		if (format[*index] == fmt_types[q].format)
+	for (q = 0; format_types[q].format != '\0'; q++)
+		if (format[*index] == format_types[q].format)
 			return (format_types[q].func(lists, buff, flags, width, precision, size));
 
 	if (format_types[q].format == '\0')

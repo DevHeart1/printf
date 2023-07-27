@@ -134,12 +134,12 @@ int print_integer(va_list lists, char buff[],
 
 	while (num > 0)
 	{
-		buffer[q--] = (num % 10) + '0';
+		buff[q--] = (num % 10) + '0';
 		num /= 10;
 	}
 	q++;
 
-	return (write_number(isNegative, q, buff, flags, width, precision, size));
+	return (write_number(isNegative, (int)q, (char *)buff, flags, width, precision, size));
 }
 
 /************************* PRINT BINARY Numbers *************************/
@@ -174,7 +174,7 @@ int print_binaryNum(va_list lists, char buff[],
 	for (q = 1; q < 32; q++)
 	{
 		m /= 2;
-		a[i] = (p / m) % 2;
+		a[q] = (p / m) % 2;
 	}
 
 	for (q = 0; q < 32; q++)
@@ -183,7 +183,7 @@ int print_binaryNum(va_list lists, char buff[],
 
 		if (sum || q == 31)
 		{
-			char k = '0' + a[i];
+			char k = '0' + a[q];
 
 			write(1, &k, 1);
 			count++;

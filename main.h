@@ -105,13 +105,12 @@ int print_the_rot13string(va_list lists, char buff[],
 		int flags, int width, int precision, int size);
 
 /* These are width handlers */
-int handle_print(char s, char buff[],
+int handle_write_char(char s, char buff[],
 		int flags, int width, int precision, int size);
-int write_the_num(int is_positive, int index, char buff[],
+int write_number(int is_positive, int index, char buff[],
 		int flags, int width, int precision, int size);
-int write_number(int ind, char buff[],
-		int flags, int width, int prec,
-		int length, char padd, char extra_c);
+int write_the_num(int ind, char buff[], int flags,
+		int width, int prec,int length, char padd, char extra_c);
 int write_the_pointer(char buff[], int index, int length,
 		int width, int flags, char padd, char extra_c, int padd_start);
 

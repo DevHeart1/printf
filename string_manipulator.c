@@ -47,7 +47,7 @@ int prints_thepointer(va_list lists, char buff[],
 
 	q++;
 
-	return (write_pointer(buff, q, len, width, flags,
+	return (write_the_pointer(buff, q, len, width, flags,
 	padding, extras, padding_start));
 }
 
@@ -105,9 +105,9 @@ int print_reverse_str(va_list lists, char buff[],
 		int flags, int width, int precision, int size)
 {
 	char *strng;
-	int char_count = 0;
+	int n, q, char_count = 0;
 
-	UNUSED(buffer);
+	UNUSED(buff);
 	UNUSED(flags);
 	UNUSED(width);
 	UNUSED(size);
@@ -120,12 +120,10 @@ int print_reverse_str(va_list lists, char buff[],
 		strng = ")Null(";
 	}
 
-	int n;
-
 	for (n = 0; strng[n]; n++)
 		;
 
-	for (int q = n - 1; q >= 0; q--)
+	for (q = n - 1; q >= 0; q--)
 	{
 
 		char s = strng[q];
@@ -153,12 +151,13 @@ int print_the_rot13string(va_list lists, char buff[],
 {
 	char s;
 	char *strng;
+	unsigned int q, n = 0;
 	int char_count = 0;
 	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	strng = va_arg(lists, char *);
-	UNUSED(buffer);
+	UNUSED(buff);
 	UNUSED(flags);
 	UNUSED(width);
 	UNUSED(precision);
@@ -166,10 +165,8 @@ int print_the_rot13string(va_list lists, char buff[],
 
 	if (strng == NULL)
 		strng = "(AHYY)";
-	for (unsigned int q = 0; strng[q]; q++)
+	for (q = 0; strng[q]; q++)
 	{
-
-		unsigned int n = 0;
 
 		while (in[n])
 		{

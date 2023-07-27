@@ -6,7 +6,7 @@
  * @q: it contains the arguments
  * Return: the flag integer value
  */
-int fetch_flag(const char *format, int *q)
+int fetch_flags(const char *format, int *q)
 {
 	int n, active_q;
 	int flagg = 0;

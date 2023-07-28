@@ -18,8 +18,8 @@ int is_printable(char s)
  * append_hexa_code - This Appends ascci in hexadecimal code to buffer
  * @buff: This represents Array of chars.
  * @q: Index at which to start appending.
- * @ascii_code: ASSCI CODE.
- * Return: Always 3
+ * @ascii_code: ASSCI code.
+ * Return: Always 3.
  */
 
 int append_hexa_code(char ascii_code, char buff[], int q)

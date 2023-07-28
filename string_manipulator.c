@@ -1,6 +1,5 @@
 #include "main.h"
 
-/****************** PRINT POINTER ******************/
 /**
  * prints_thepointer - Prints the value of a pointer variable
  * @lists: Contains the the list of arguments
@@ -15,7 +14,7 @@ int prints_thepointer(va_list lists, char buff[],
 		int flags, int width, int precision, int size)
 {
 	char extras = 0, padding = ' ';
-	int q = BUFF_SIZE - 2, len = 2, padding_start = 1; /* length=2, for '0x' */
+	int q = BUFF_SIZE - 2, len = 2, padding_start = 1;
 	unsigned long number_addrs;
 	char map_to[] = "0123456789abcdef";
 	void *address = va_arg(lists, void *);
@@ -51,7 +50,6 @@ int prints_thepointer(va_list lists, char buff[],
 	padding, extras, padding_start));
 }
 
-/************************* PRINT NON PRINTABLE *************************/
 /**
  * print_the_unprintable - Prints ascii codes in hexa of non printable chars
  * @lists: Contains the the list of arguments
